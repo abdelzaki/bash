@@ -1,0 +1,37 @@
+#file should start with #!bin/sh
+#Regex in shell follows Posix Standard
+#grep:General regular expression print
+#	it prints the matched line the whole line 
+#	ex: ls /user/bin | grep  zip -> it will print all lines which has the value zip
+#	it can has options such as grep -i  to ignore case senstivty or grep -v to negate match
+#	meta charchter in grep:
+#		. -> it will match any character ex: 
+			grep -e ".*mhx" file.txt #will match a.mhx bmhx
+			grep -e ".\.mhx" file.txt # will match only a.mhx because we escaped . by backslash which means it should a dot character
+#		$ -> end with ex:
+			grep -e "\.mhx$" # matches .mhx
+#		^ -> starts which only when there is no bracket
+#		^ -> inside [] means except [^"] -> except "
+		grep -e "^(ab|cd|ed)" file.txt #any thing which "sarts" with ac or cd or ed
+		grep  -e "^ab|cd|ed" file.txt  # any thins starts with ac or "contians" cd or ed
+#		? -> option matches zero  or more occurence ex:
+			grep -e "\(?1\)?" # here is the () as options it matches (1), (1, 1 and  1) 
+#		* -> zero or many occurence 
+#		+ -> at least one occurence 
+#		() -> is grouping the condition 
+#		[] -> range which interperter as "ONE" character ex:
+			grep [0-9] # matches only one digit
+			grep [0-9]* # matches as many number as possible
+#sed: streams editor
+#it takes -e option for exdtended regualr expressions ex:
+	sed -e 's/^[ /t]//' file.txt # remove any space or tap in front of the file 
+#it takes -i for changing in place ex:
+	sed -i 's/low/high/' file.txt #change low with high 
+#it can takes number for matching address in each line ex:
+	sed -i '2s/low/high/' file.txt #changes the second match in every line
+# it can change every match 
+	sed -i 's/low/high/g' #by using g which means global matches
+# to get the matches regular expression using sed:
+	x= sed -e 's/.*file="\([^"]\)/\1/' # get the matches values of () in x
+	
+#awk: 
