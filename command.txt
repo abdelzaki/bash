@@ -35,3 +35,13 @@
 	x= sed -e 's/.*file="\([^"]\)/\1/' # get the matches values of () in x
 	
 #awk: 
+awk -F ':' 'print $1' file.txt #print first colum which is septerted by :
+# using awk to print the second matched line ex:
+awk 'file/{i++}i==2/' file.txt
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+#string matching short and long match
+string1='folder1/folder2/folder3/f.txt'
+longestleft=${string1##*/} # longest path from left will get f.txt
+shortestleft=${string1#*/}  #shortest path from right will get folder2/folder3/f.txt
+rightmatch=${longestleft%%*.} # get f
