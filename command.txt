@@ -32,7 +32,7 @@
 # it can change every match 
 	sed -i 's/low/high/g' #by using g which means global matches
 # to get the matches regular expression using sed:
-	x= sed -e 's/.*file="\([^"]\)/\1/' # get the matches values of () in x
+	x= sed -e 's/.*file="\([^"]\)/\1/' # get the matches values of () in x --> very very very imprtant before this step should only one line avaliable you should filter the text before this point
 	
 #awk: 
 awk -F ':' 'print $1' file.txt #print first colum which is septerted by :
@@ -45,3 +45,15 @@ string1='folder1/folder2/folder3/f.txt'
 longestleft=${string1##*/} # longest path from left will get f.txt
 shortestleft=${string1#*/}  #shortest path from right will get folder2/folder3/f.txt
 rightmatch=${longestleft%%*.} # get f
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------#
+#If statment in Bash
+if[-n "$1"]; then # -> is true when the string is not NULL
+if[-f "$1"]; then # -> test if it is a file
+
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------#
+# return from file to bash
+$? -> what has the last command returned ex: u excute .c file and want to know what the file returned 
+$! -> the PID of the last executed script in Backgroud using &
+x = $(file.c >> file-xtx) -> x whould be what have sent printf.
