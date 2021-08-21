@@ -22,6 +22,8 @@
 #		[] -> range which interperter as "ONE" character ex:
 			grep [0-9] # matches only one digit
 			grep [0-9]* # matches as many number as possible
+			
+		md5_calc=`md5sum ${FILE_NAME} | grep -Eo '^[^ ]+'` -> write the value in variable
 #sed: streams editor
 #it takes -e option for exdtended regualr expressions ex:
 	sed -e 's/^[ /t]//' file.txt # remove any space or tap in front of the file 
