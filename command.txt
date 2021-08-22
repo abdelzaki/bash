@@ -23,7 +23,15 @@
 			grep [0-9] # matches only one digit
 			grep [0-9]* # matches as many number as possible
 			
-		md5_calc=`md5sum ${FILE_NAME} | grep -Eo '^[^ ]+'` -> write the value in variable
+		md5_calc=`md5sum ${FILE_NAME} | grep -Eo '^[^ ]+'` -> write the value in variable -> rememerb use `` to write the data in variable
+		
+		if [[ $x == /fw* ]]  -> u can test part of the string using wild card
+		
+		z=`cat ./md5.txt| grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
+		
+#	tar -c foldertoextractat -x file.tgz -> extract because it is x and -c means extract in this location
+#  	rm -rf -> remove recursively and force 		
+		
 #sed: streams editor
 #it takes -e option for exdtended regualr expressions ex:
 	sed -e 's/^[ /t]//' file.txt # remove any space or tap in front of the file 
@@ -46,16 +54,18 @@ awk 'file/{i++}i==2/' file.txt
 string1='folder1/folder2/folder3/f.txt'
 longestleft=${string1##*/} # longest path from left will get f.txt
 shortestleft=${string1#*/}  #shortest path from right will get folder2/folder3/f.txt
-rightmatch=${longestleft%%*.} # get f
+rightmatch=${longestleft%%*.} #  git folder name . is only a dot u can exchange it with / to work with folder
+${file%/*} -> remove the file and get only the folder name 
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------#
 #If statment in Bash
 if[-n "$1"]; then # -> is true when the string is not NULL
+if[-z "$1"]; then # -> is true when the string is  NULL
 if[-f "$1"]; then # -> test if it is a file
-
-
+if[-d "$1"]; then # -> test if it is a folder
+if[-e "$1"]; then # -> test if it exists
 #-------------------------------------------------------------------------------------------------------------------------------------------------------#
 # return from file to bash
 $? -> what has the last command returned ex: u excute .c file and want to know what the file returned 
 $! -> the PID of the last executed script in Backgroud using &
-x = $(file.c >> file-xtx) -> x whould be what have sent printf.
+x = $(file.c >> file.txt) -> x whould be what have sent printf.
