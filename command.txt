@@ -14,7 +14,7 @@
 #		^ -> inside [] means except [^"] -> except "
 		grep -e "^(ab|cd|ed)" file.txt #any thing which "sarts" with ac or cd or ed
 		grep  -e "^ab|cd|ed" file.txt  # any thins starts with ac or "contians" cd or ed
-#		? -> option matches zero  or more occurence ex:
+#		? -> option matches one  or more occurence ex:
 			grep -e "\(?1\)?" # here is the () as options it matches (1), (1, 1 and  1) 
 #		* -> zero or many occurence 
 #		+ -> at least one occurence 
