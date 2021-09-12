@@ -20,3 +20,21 @@ for(int i = 0 ; i < args[0] ; i++){
 	SPI_SendData(SPI2,&dummy_write,1);
 	SPI_ReceiveData(SPI2,&id[i],1);
 }
+
+
+
+/* time
+----------------------------------------------------------------------------
+*/
+
+t = time(NULL)
+	// return second since 1970
+
+gettimeofday(&tv)
+	// return the same as time but in seconds and millysecond
+	
+gmp = gmtime(&t)
+	// retun time in year, month, day, hour without time offset
+	
+locp = localtime(&t);
+	// retun time in year, month, day, hour with time offset
