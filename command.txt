@@ -83,4 +83,12 @@ x = $(file.c >> file.txt) -> x whould be what have sent printf.
 # to make a device u can use mknod command 
 	mknod /dev/chardevicetest c 8 1 // u create a character device which has a majpr numbher of 8 abnd minor number of 1 
 
+# to execute shell inside another shell u can always uses "source" command the idea behind source is that shell copy the file to the other file which means all the variabe in the
+#  under file are seen from the first file	
+	source test.sh 
+	. test.sh # . is alias to source 
+
+# to assign a default value to variable if the variable doesnot exit 
+	mode=${1:-start} # if the first argument doesnot exit assign start to mode
+
 	
