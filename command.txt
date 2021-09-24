@@ -29,10 +29,14 @@
 		
 		z=`cat ./md5.txt| grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
 		
+
 #	tar -C foldertoextractat -x file.tgz -> extract because it is x and -C means extract in this location
 		-C => capital c means change directory 
 	tar -C "directory to go to" -cvfz "filetoCreate" "from what" 
 	tar -C /root/file -cvpzf "file.tg.pz" ./
+#	tar -c foldertoextractat -x file.tgz -> extract because it is x and -c means extract in this location
+# 	tar -xzvf file.tar.gz -> x=> extract file, z=> for file which is .gz , v => show progress, f=> file name
+
 #  	rm -rf -> remove recursively and force 		
 		
 #sed: streams editor
@@ -72,3 +76,11 @@ if[-e "$1"]; then # -> test if it exists
 $? -> what has the last command returned ex: u excute .c file and want to know what the file returned 
 $! -> the PID of the last executed script in Backgroud using &
 x = $(file.c >> file.txt) -> x whould be what have sent printf.
+
+# to redirect the error u can use 2>&1
+	cat file > file2 2>&1
+
+# to make a device u can use mknod command 
+	mknod /dev/chardevicetest c 8 1 // u create a character device which has a majpr numbher of 8 abnd minor number of 1 
+
+	
