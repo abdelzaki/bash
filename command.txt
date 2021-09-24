@@ -29,8 +29,10 @@
 		
 		z=`cat ./md5.txt| grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
 		
-#	tar -c foldertoextractat -x file.tgz -> extract because it is x and -c means extract in this location
-
+#	tar -C foldertoextractat -x file.tgz -> extract because it is x and -C means extract in this location
+		-C => capital c means change directory 
+	tar -C "directory to go to" -cvfz "filetoCreate" "from what" 
+	tar -C /root/file -cvpzf "file.tg.pz" ./
 #  	rm -rf -> remove recursively and force 		
 		
 #sed: streams editor
