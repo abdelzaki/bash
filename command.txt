@@ -1,4 +1,4 @@
-#file should start with #!bin/sh
+#file should start with #!/bin/sh
 #Regex in shell follows Posix Standard
 #grep:General regular expression print
 #	it prints the matched line the whole line 
@@ -27,8 +27,10 @@
 		
 		if [[ $x == /fw* ]]  -> u can test part of the string using wild card
 		
-		z=`cat ./md5.txt| grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
+		command=`cat ./md5.txt| grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
+		echo "$command"
 		
+# 		z=$(< temp.txt) -> save the value in the file temp.txt in z
 
 #	tar -C foldertoextractat -x file.tgz -> extract because it is x and -C means extract in this location
 		-C => capital c means change directory 
