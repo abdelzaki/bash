@@ -86,7 +86,7 @@ x = $(file.c >> file.txt) -> x whould be what have sent printf.
 # to execute shell inside another shell u can always uses "source" command the idea behind source is that shell copy the file to the other file which means all the variabe in the
 #  under file are seen from the first file	
 	source test.sh 
-	. test.sh # . is alias to source 
+	. test.sh . is alias to source 
 
 # to assign a default value to variable if the variable doesnot exit 
 	mode=${1:-start} # if the first argument doesnot exit assign start to mode
