@@ -27,10 +27,21 @@
 		
 		if [[ $x == /fw* ]]  -> u can test part of the string using wild card
 		
-		command=`cat ./md5.txt| grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
+		command=`cat ./md5.txt | grep -Eo '^[0-9][0-9]' | tail -1 `  -> USING HEAD AND TAIL U CAN CONTROL WHICH OCCURENCE U ARE INTERESTED IN 
 		echo "$command"
 		
 # 		z=$(< temp.txt) -> save the value in the file temp.txt in z
+
+#	to read line by line from file:
+		cat ./file.txt | while read LINE
+			do
+				echo $LINE
+			done
+	another way:
+		filter=`cat "$file1.txt"`
+		for TOKEN in `echo "$filter" ` | awk ' {print $1}' ; do
+		done
+		
 
 #	tar -C foldertoextractat -x file.tgz -> extract because it is x and -C means extract in this location
 		-C => capital c means change directory 
