@@ -23,7 +23,7 @@
 			grep [0-9] # matches only one digit
 			grep [0-9]* # matches as many number as possible
 			
-		md5_calc=`md5sum ${FILE_NAME} | grep -Eo '^[^ ]+'` -> write the value in variable -> rememerb use `` to write the data in variable
+		md5_calc=`md5sum ${FILE_NAME} | grep -Eo '^[^ ]+'` -> get whats inside the file until u find white space
 		
 		if [[ $x == /fw* ]]  -> u can test part of the string using wild card
 		
@@ -76,6 +76,7 @@ longestleft=${string1##*/} # longest path from left will get f.txt
 shortestleft=${string1#*/}  #shortest path from right will get folder2/folder3/f.txt
 rightmatch=${longestleft%%*.} #  git folder name . is only a dot u can exchange it with / to work with folder
 ${file%/*} -> remove the file and get only the folder name 
+basebame -> get only the name of the file
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------#
 #If statment in Bash
@@ -104,4 +105,8 @@ x = $(file.c >> file.txt) -> x whould be what have sent printf.
 # to assign a default value to variable if the variable doesnot exit 
 	mode=${1:-start} # if the first argument doesnot exit assign start to mode
 
+# set start
+	source file.sh -> this would send start to this file because u used set before it 
 	
+# tricks:
+	-> to know the folder struture : ls -ld $(find .)
